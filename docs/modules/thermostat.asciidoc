@@ -1,0 +1,37 @@
+////
+This file is generated! See scripts/docs_collector.py
+////
+
+[[metricbeat-module-thermostat]]
+== thermostat Module
+
+This is the thermostat Module.
+
+
+
+[float]
+=== Example Configuration
+
+The thermostat module supports the standard configuration options that are described
+in <<configuration-metricbeat>>. Here is an example configuration:
+
+[source,yaml]
+----
+nestbeat.modules:
+- module: thermostat
+  metricsets: ["status"]
+  enabled: true
+  period: 10s
+  hosts: ["localhost"]
+
+----
+
+[float]
+=== Metricsets
+
+The following metricsets are available:
+
+* <<metricbeat-metricset-thermostat-status,status>>
+
+include::thermostat/status.asciidoc[]
+

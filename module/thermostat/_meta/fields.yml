@@ -1,0 +1,9 @@
+- key: thermostat
+  title: "thermostat"
+  description: >
+    thermostat Module
+  fields:
+    - name: thermostat
+      type: group
+      description: >
+      fields:
