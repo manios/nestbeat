@@ -3,4 +3,9 @@
   enabled: true
   period: 10s
   hosts: ["localhost"]
-
+  # OAuth access token which has to be used in order to authenticate against Nest API. It will have a prefix of "Bearer": in Authorization http header.
+	accessToken: aJWTToken
+  # Base url of Nest API
+	apiHost: https://developer-api.nest.com
+  # Nest Thermostat unique identifier (hexadecimal)
+	deviceID: daddadd

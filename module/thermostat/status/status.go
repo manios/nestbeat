@@ -19,7 +19,12 @@ func init() {
 // multiple fetch calls.
 type MetricSet struct {
 	mb.BaseMetricSet
-	counter int
+	// OAuth access token which has to be used in order to authenticate against Nest API
+	accessToken string
+	// Base url of Nest API
+	apiHost string
+	// Nest Thermostat unique identifier
+	deviceID string
 }
 
 // New create a new instance of the MetricSet
@@ -27,7 +32,16 @@ type MetricSet struct {
 // configuration entries if needed.
 func New(base mb.BaseMetricSet) (mb.MetricSet, error) {
 
-	config := struct{}{}
+	// Unpack additional configuration options
+	config := struct {
+		accessToken string `config:"accessToken"`
+		apiHost     string `config:"apiHost"`
+		deviceID    string `config:"deviceID"`
+	}{
+		accessToken: "",
+		apiHost:     "https://developer-api.nest.com",
+		deviceID:    "",
+	}
 
 	if err := base.Module().UnpackConfig(&config); err != nil {
 		return nil, err
@@ -35,7 +49,9 @@ func New(base mb.BaseMetricSet) (mb.MetricSet, error) {
 
 	return &MetricSet{
 		BaseMetricSet: base,
-		counter:       1,
+		accessToken:   config.accessToken,
+		apiHost:       config.apiHost,
+		deviceID:      config.deviceID,
 	}, nil
 }
 
@@ -45,9 +61,9 @@ func New(base mb.BaseMetricSet) (mb.MetricSet, error) {
 func (m *MetricSet) Fetch() (common.MapStr, error) {
 
 	event := common.MapStr{
-		"counter": m.counter,
+	// "counter": m.counter,
 	}
-	m.counter++
+	// m.counter++
 
 	return event, nil
 }
