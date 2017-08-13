@@ -14,8 +14,14 @@ nestbeat.modules:
 - module: thermostat
   metricsets: ["status"]
   enabled: true
-  period: 10s
+  # Collection period is intentionally set to 60s in order to conform to Nest API data rate limits. See more at: https://developers.nest.com/documentation/cloud/data-rate-limits
+  period: 60s
   hosts: ["localhost"]
-
+  # OAuth access token which has to be used in order to authenticate against Nest API. It will have a prefix of "Bearer": in Authorization http header.
+  accessToken: aJWTToken
+  # Base url of Nest API
+  apiHost: https://developer-api.nest.com
+  # Nest Thermostat unique identifier (hexadecimal)
+  deviceID: daddadd
 
 
