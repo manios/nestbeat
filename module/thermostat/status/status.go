@@ -3,7 +3,6 @@ package status
 import (
 	"github.com/elastic/beats/libbeat/common"
 	"github.com/elastic/beats/metricbeat/mb"
-	"github.com/manios/go-nest/nestapi"
 	"github.com/manios/nestbeat/module/thermostat/status/gonest"
 )
 
@@ -69,7 +68,9 @@ func New(base mb.BaseMetricSet) (mb.MetricSet, error) {
 // descriptive error must be returned.
 func (m *MetricSet) Fetch() (common.MapStr, error) {
 
-	var apos nestapi.ThermostatApi
+	var apos = gonest.NewThermostatApi()
+	apos.Configuration.AccessToken = m.accessToken
+	apos.Configuration.BasePath = m.apiHost
 
 	// Retrieve stats for Nest thermostat
 	tstat, _, _ := apos.DevicesThermostatsThermostatUidGet(m.deviceID)
