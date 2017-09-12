@@ -69,8 +69,7 @@ func New(base mb.BaseMetricSet) (mb.MetricSet, error) {
 func (m *MetricSet) Fetch() (common.MapStr, error) {
 
 	var apos = gonest.NewThermostatApi()
-	apos.Configuration.AccessToken = m.accessToken
-	apos.Configuration.BasePath = m.apiHost
+	apos.Configuration = m.nestAPIConf
 
 	// Retrieve stats for Nest thermostat
 	tstat, _, _ := apos.DevicesThermostatsThermostatUidGet(m.deviceID)
