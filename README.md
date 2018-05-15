@@ -1,5 +1,9 @@
 # nestbeat
 
+[[file:https://img.shields.io/badge/status-inactive-red.svg]]
+[[https://goreportcard.com/report/github.com/manios/nestbeat][file:https://goreportcard.com/badge/github.com/manios/nestbeat?status.svg]]
+
+
 nestbeat is a beat based on metricbeat which was generated with metricbeat/metricset generator. It is a [Metricbeat](https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-overview.html) which periodically collects statitstic data from a [Nest thermostat](https://nest.com/thermostat/meet-nest-thermostat/).
 
 
