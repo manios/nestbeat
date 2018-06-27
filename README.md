@@ -1,6 +1,7 @@
 # nestbeat
 
-[![project status badge](https://img.shields.io/badge/status-inactive-red.svg)](https://img.shields.io/badge/status-inactive-red.svg) [![Project Goreport card analysis badge](https://goreportcard.com/badge/github.com/manios/nestbeat?status.svg)](https://goreportcard.com/report/github.com/manios/nestbeat)
+[![project status badge](https://img.shields.io/badge/status-inactive-red.svg)](https://img.shields.io/badge/status-inactive-red.svg) [![Project Goreport card analysis badge](https://goreportcard.com/badge/github.com/manios/nestbeat?status.svg)](https://goreportcard.com/report/github.com/manios/nestbeat)&nbsp;[![GoDoc](https://godoc.org/github.com/manios/nestbeat?status.svg)](https://godoc.org/github.com/manios/nestbeat)
+
 
 
 nestbeat is a beat based on metricbeat which was generated with metricbeat/metricset generator. It is a [Metricbeat](https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-overview.html) which periodically collects statitstic data from a [Nest thermostat](https://nest.com/thermostat/meet-nest-thermostat/).
